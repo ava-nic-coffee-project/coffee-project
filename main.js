@@ -11,7 +11,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = 0; i < coffees.length; i++) {
+    for (let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -21,7 +21,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
@@ -29,12 +29,13 @@ function updateCoffees(e) {
     mainContent.innerHTML = renderCoffees(filteredCoffees);
 }
 
-function searchCoffeeByName (e) {
+function searchCoffeeByName(e) {
     e.preventDefault();
-    let searchedCoffee = searchBox.value;
+    let searchedCoffee = searchBox.value.toLowerCase();
+
     let filteredCoffeeName = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.name === searchedCoffee) {
+    coffees.forEach(function (coffee) {
+        if (coffee.name.toLowerCase().includes(searchedCoffee)) {
             filteredCoffeeName.push(coffee);
         }
     });
@@ -67,5 +68,12 @@ let searchBox = document.querySelector('#search-box');
 mainContent.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
-submitButton.addEventListener('click', searchCoffeeByName);
+document.addEventListener('keydown', (event) => {
+    let keyCode = event.code;
+    console.log(keyCode);
+    if(keyCode === 'Enter'){
+        updateCoffees();
+    }
+});
+searchBox.addEventListener('input', searchCoffeeByName);
 
