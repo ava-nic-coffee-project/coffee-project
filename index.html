@@ -3,47 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="page-wrapper">
-    <div class="container">
+    <div class="container header-content">
         <div class="row">
             <div class="column">
-                <header><h1>Coffee!</h1></header>
+                <header><h1>Spooky Beans!</h1></header>
             </div>
         </div>
         <div class="row nr-search-add-forms">
-            <div class="column nr-search-div">
+            <div class="column search-content">
                 <h2>Search</h2>
                 <form>
                     <label for="roast-selection"></label>
-                    <select id="roast-selection">
+                    <select class="roast-dropdown" id="roast-selection">
                         <option>all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
                     <label>
-                        <input id="search-box" type="text">
+                        <input class="input-name" id="search-box" type="text">
                     </label>
-                    <input id="submit" type="submit"/>
+                    <input class="btn" id="submit" type="submit"/>
                 </form>
             </div>
-            <div class="column nr-add-div">
+            <div class="column add-content">
                 <h2>Add</h2>
+                <form>
+                    <label for="add-coffee-roast">
+                        <select class="roast-dropdown" id="add-coffee-roast">
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                        </select>
+                    </label>
+                    <label for="add-coffee-name">
+                        <input  class="input-name" id="add-coffee-name" type="text">
+                    </label>
+                    <input class="btn" id="add-btn" type="submit"/>
+                </form>
             </div>
         </div>
     </div>
-<!--    COFFEES GO HERE-->
-    <div class="container">
+    <!--    COFFEES GO HERE-->
+    <div class="container main-content" id="main-content">
         <div class="row">
             <div class="column nr-coffees" id="coffees">
 
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </div>
-<script src="main.js"></script>
 </body>
 </html>
