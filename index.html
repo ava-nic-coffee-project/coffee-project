@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<table>
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th>ID</th>-->
-<!--        <th>NAME</th>-->
-<!--        <th>ROAST</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-    <tbody id="coffees"></tbody>
-</table>
-
 <div class="page-wrapper">
     <div class="container">
         <div class="row">
@@ -34,6 +23,9 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
+                    <label>
+                        <input id="search-box" type="text">
+                    </label>
                     <input id="submit" type="submit"/>
                 </form>
             </div>
@@ -45,10 +37,8 @@
 <!--    COFFEES GO HERE-->
     <div class="container">
         <div class="row">
-            <div class="column nr-coffees">
-                <div class="">
+            <div class="column nr-coffees" id="coffees">
 
-                </div>
             </div>
         </div>
     </div>
