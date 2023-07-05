@@ -7,3 +7,21 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
+.nr-search-add-forms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.nr-coffees {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
