@@ -113,6 +113,9 @@
 .d-flex.flex-column {
     flex-direction: column;
 }
+.d-flex.flex-row {
+    flex-direction: row;
+}
 .d-flex.justify-center {
     justify-content: center;
 }
