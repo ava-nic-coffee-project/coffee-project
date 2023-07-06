@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--    HELP-->
     <meta charset="UTF-8">
-    <title></title>
+    <title>Spooky Beans!</title>
+    <link rel="icon" type="image/x-icon" href="img/images.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
@@ -14,8 +14,12 @@
 <div class="page-wrapper">
     <div class="container header-content">
         <div class="row">
+            <!--            HEADER STARTS HERE         -->
             <div class="column">
-                <header><h1>Spooky Beans!</h1></header>
+                <header class="navbar">
+                    <div class="logo-img"></div>
+                    <h1 id="title">Spooky Beans!</h1>
+                </header>
             </div>
         </div>
         <div class="row nr-search-add-forms">
@@ -52,8 +56,9 @@
                 </form>
             </div>
         </div>
+        <div id="ghost"></div>
     </div>
-    <!--    COFFEES GO HERE-->
+    <!--    COFFEES CARDS GO HERE-->
     <div class="container main-content" id="main-content">
         <div class="row">
             <div class="column nr-coffees" id="coffees">
@@ -61,10 +66,9 @@
             </div>
         </div>
     </div>
-
     <!--NR - Button for reset-->
-    <div class="container">
-        <div class="row footer">
+    <div class="container footer">
+        <div class="row footer-content">
 
             <div class="column reset-btn">
                 <input class="btn" id="reset" type="button" value="Reset Coffee Items"/>

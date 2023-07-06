@@ -16,6 +16,13 @@ function renderCoffee(coffee) {
     return html;
 }
 
+function ghostFloat(){
+    let html = '<div class="ghost" id="ghost">';
+    html += '<img class="ghost-img" src="img/cute-ghost.png" alt="cute ghost">'
+    html += '</div>';
+    return html;
+}
+
 function renderCoffees(coffees) {
     let html = '';
     for (let i = 0; i < coffees.length; i++) {
@@ -96,8 +103,11 @@ let searchBox = document.querySelector('#search-box');
 let addCoffeeRoast = document.querySelector('#add-coffee-roast');
 let addCoffeeName = document.querySelector('#add-coffee-name');
 let addButton = document.querySelector('#add-btn');
+let ghostImg = document.querySelector('#ghost');
+let title = document.querySelector('#title');
 
 mainContent.innerHTML = renderCoffees(coffees);
+ghostImg.innerHTML = ghostFloat();
 
 submitButton.addEventListener('click', updateCoffees);
 document.addEventListener('keydown', (event) => {
@@ -112,5 +122,7 @@ addButton.addEventListener('click', addCoffee);
 // NR - variable for reset button
 let resetButton = document.querySelector('#reset')
 
-// NR listner for reset button
+// NR listener for reset button
 resetButton.addEventListener('click', resetCoffees);
+
+title.addEventListener('click', ghostFloat);
