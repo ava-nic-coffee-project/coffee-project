@@ -55,6 +55,16 @@ function addCoffee (e) {
     let newCoffee = {id: (coffees.length + 1), name: addCoffeeName.value, roast: addCoffeeRoast.value};
     coffees.push(newCoffee);
     mainContent.innerHTML = renderCoffees(coffees);
+    localStorage.setItem('coffeeStorage', JSON.stringify(coffees));
+    alert(`Adding ${newCoffee.name} to coffee list!`)
+}
+
+// NR function to reload default page
+function resetCoffees() {
+    coffees = coffeesDefaultBackUp;
+    localStorage.setItem('coffeeStorage', JSON.stringify(coffees));
+    alert('Coffees reset to default!');
+    location.reload();
 }
 
 
@@ -76,6 +86,9 @@ let coffees = [
     {id: 14, name: 'Bones Latte', roast: 'dark'},
 ];
 
+let coffeesDefaultBackUp = coffees;
+coffees = JSON.parse(localStorage.getItem('coffeeStorage'));
+
 let mainContent = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
@@ -96,3 +109,8 @@ document.addEventListener('keydown', (event) => {
 searchBox.addEventListener('input', searchCoffeeByName);
 addButton.addEventListener('click', addCoffee);
 
+// NR - variable for reset button
+let resetButton = document.querySelector('#reset')
+
+// NR listner for reset button
+resetButton.addEventListener('click', resetCoffees);
