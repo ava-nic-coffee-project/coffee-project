@@ -2,13 +2,12 @@
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee-card">';
-    // html += '<td>' + coffee.id + '</td>';
     if(coffee.roast === 'light'){
-        html += '<img src="img/light-roast.jpeg" alt="light roast">'
+        html += '<img src="../img/light-roast.jpeg" alt="light roast">'
     } else if(coffee.roast === 'medium'){
-        html += '<img src="img/medium-roast.jpeg" alt="medium roast">'
+        html += '<img src="../img/medium-roast.jpeg" alt="medium roast">'
     }else if(coffee.roast === 'dark') {
-        html += '<img src="img/dark-roast.jpeg" alt="dark roast">'
+        html += '<img src="../img/dark-roast.jpeg" alt="dark roast">'
     }
     html += '<h3 class="coffee-name">' + coffee.name + '</h3>';
     html += '<p class="coffee-roast">' + coffee.roast + '</p>';
@@ -18,7 +17,7 @@ function renderCoffee(coffee) {
 
 function ghostFloat(){
     let html = '<div class="ghost" id="ghost">';
-    html += '<img class="ghost-img" src="img/cute-ghost.png" alt="cute ghost">'
+    html += '<img class="ghost-img" src="../img/cute-ghost.png" alt="cute ghost">'
     html += '</div>';
     return html;
 }
